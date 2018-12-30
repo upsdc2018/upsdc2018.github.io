@@ -239,7 +239,7 @@ class World {
     }
 
     show(context) {
-        this.big.onload = function() {
+        this.bg.onload = function() {
             context.drawImage(this.bg, this.bgRect.x, this.bgRect.y);
         }
         let lRectList = null;
