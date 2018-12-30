@@ -182,8 +182,8 @@ class World {
         this.viewWidth = canvas.width;
         this.viewHeight = canvas.height;
         this.bg = new Image();
-        this.bg.src = "assets/earth.jpg";
         this.bgRect = new Rect(0, 0, this.bg.width, this.bg.height);
+        this.bg.src = "assets/earth.jpg";
     }
 
     update(player) {
@@ -238,10 +238,12 @@ class World {
         }
     }
 
+    showBg(context) {
+        context.drawImage(this.bg, this.bgRect.x, this.bgRect.y);
+    }
+
     show(context) {
-        this.bg.onload = function() {
-            context.drawImage(this.bg, this.bgRect.x, this.bgRect.y);
-        }
+        this.bg.addEventListener('load', showBg(context), false);
         let lRectList = null;
         for (let c of this.gKeys) {
             context.fillStyle = c;
