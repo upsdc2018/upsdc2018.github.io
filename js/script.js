@@ -239,7 +239,9 @@ class World {
     }
 
     show(context) {
-        context.drawImage(this.bg, this.bgRect.x, this.bgRect.y);
+        this.big.onload = function() {
+            context.drawImage(this.bg, this.bgRect.x, this.bgRect.y);
+        }
         let lRectList = null;
         for (let c of this.gKeys) {
             context.fillStyle = c;
