@@ -243,7 +243,7 @@ class World {
     }
 
     show(context) {
-        this.bg.addEventListener('load', showBg(context), false);
+        this.bg.addEventListener('load', this.showBg(context), false);
         let lRectList = null;
         for (let c of this.gKeys) {
             context.fillStyle = c;
