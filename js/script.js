@@ -181,32 +181,10 @@ class World {
         this.gValues = Object.values(this.ground);
         this.viewWidth = canvas.width;
         this.viewHeight = canvas.height;
-        this.bg = new Image();
-        this.bgRect = new Rect(0, 0, this.bg.width, this.bg.height);
-        this.bg.src = "assets/earth.jpg";
     }
 
     update(player) {
         player.vel.addVec(this.gravity);
-
-        // update bg and ground positions
-        if (player.leftSide < this.viewWidth * 0.1) {
-            player.x = this.viewWidth * 0.1
-            if (this.bgRect.leftSide < 0) {
-                this.bgRect.x = 0;
-                player.vel.x = 0;
-            } else {
-                this.bgRect.x += player.vel.x;
-            }
-        } else if (player.rightSide > this.viewWidth * 0.9) {
-            player.x = this.viewWidth * 0.9 - player.w - 1;
-            if (this.bgRect.rightSide < this.viewWidth) {
-                player.vel.x = 0;
-                this.bgRect.x = this.viewWidth - this.bgRect.w;
-            } else {
-                this.bgRect.x += player.vel.x;
-            }
-        }
 
         // check for collision
         for (let rectList of this.gValues) {
@@ -238,12 +216,7 @@ class World {
         }
     }
 
-    showBg(context) {
-        context.drawImage(this.bg, this.bgRect.x, this.bgRect.y);
-    }
-
     show(context) {
-        this.bg.addEventListener('load', this.showBg(context), false);
         let lRectList = null;
         for (let c of this.gKeys) {
             context.fillStyle = c;
@@ -285,7 +258,7 @@ let player = new Character(canvas.height * 0.1, canvas.height % 0.5, cell, cell*
 // ground rect
 const WORLD = {
     // "#AAAAAA" : [new Rect(450, 0, 50, 300), new Rect(0, canvas.height-50, canvas.width, 50), new Rect(450, canvas.height-100, 50, 50)]
-    "#BBBBBB" : [new Rect(0, canvas.height, canvas.width, 50)]
+    "#BBBBBB" : [new Rect(0, canvas.height, canvas.width, 50), new Rect(450, canvas.height-50, 200, 50)]
 };
 
 const GRAVITY = new Vector(0, 1);
