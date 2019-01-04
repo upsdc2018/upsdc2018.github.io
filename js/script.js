@@ -34,12 +34,12 @@ function handleStart(e) {
     e.preDefault();
     // context.fillStyle = "#FF0000";
     // context.fillRect(0, 0, canvas.width, canvas.height);
-    print(e.touches[0].clientX, e.touches[0].clientY);
+    print(String(e.touches[0].clientX) + " " + String(e.touches[0].clientY));
 }
 
 function handleEnd(e) {
     e.preDefault();
 }
 
-context.fillStyle = "#FFFFFF";
+context.fillStyle = "#FFFF00";
 context.fillRect(0, 0, 10, 10);
