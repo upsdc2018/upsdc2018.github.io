@@ -19,6 +19,15 @@ canvas.style.margin = String(Math.floor((window.innerHeight - canvas.height) / 2
 
 // start
 
+// temporary
+let mpos = {x:0, y:0};
+canvas.addEventListener("click", getMousePos)
+function getMousePos(e) {
+    mpos.x = e.clientX;
+    mpos.y = e.clientY;
+    console.log(mpos);
+}
+
 canvas.addEventListener("touchstart", handleStart, false);
 canvas.addEventListener("touchend", handleEnd, false);
 // canvas.addEventListener("touchcancel", handleCancel, false);
@@ -27,7 +36,7 @@ canvas.addEventListener("touchend", handleEnd, false);
 function print(text) {
     context.font = "10px Arial";
     context.fillStyle = "#FFFFFF";
-    context.fillText(text, 0, 0);
+    context.fillText(text, 0, 20);
 }
 
 function handleStart(e) {
@@ -43,3 +52,5 @@ function handleEnd(e) {
 
 context.fillStyle = "#FFFF00";
 context.fillRect(0, 0, 10, 10);
+
+print(mpos);
