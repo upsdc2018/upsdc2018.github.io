@@ -24,10 +24,17 @@ canvas.addEventListener("touchend", handleEnd, false);
 // canvas.addEventListener("touchcancel", handleCancel, false);
 // canvas.addEventListener("touchmove", handleMove, false);
 
+function print(text) {
+    context.font = "10px Arial";
+    context.fillStyle = "#FFFFFF";
+    context.fillText(text, 0, 0);
+}
+
 function handleStart(event) {
     event.preventDefault();
     context.fillStyle = "#FF0000";
     context.fillRect(0, 0, canvas.width, canvas.height);
+    print(event.touches[0].clientX, event.touches[0].clientY);
 }
 
 function handleEnd(event) {
@@ -35,3 +42,4 @@ function handleEnd(event) {
     context.fillStyle = "#000000";
     context.fillRect(0, 0, canvas.width, canvas.height);
 }
+
