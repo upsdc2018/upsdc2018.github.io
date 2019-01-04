@@ -50,7 +50,7 @@ function handleEnd(e) {
     e.preDefault();
 }
 
-context.fillStyle = "#FFFF00";
-context.fillRect(0, 0, 10, 10);
-
-print(mpos);
+function handleMove(e) {
+    e.preDefault();
+    print(String(e.touches[0].clientX) + " " + String(e.touches[0].clientY));
+}
