@@ -40,17 +40,17 @@ function print(text) {
 }
 
 function handleStart(e) {
-    e.preDefault();
+    e.preventDefault();
     // context.fillStyle = "#FF0000";
     // context.fillRect(0, 0, canvas.width, canvas.height);
     print(String(e.touches[0].clientX) + " " + String(e.touches[0].clientY));
 }
 
 function handleEnd(e) {
-    e.preDefault();
+    e.preventDefault();
 }
 
 function handleMove(e) {
-    e.preDefault();
+    e.preventDefault();
     print(String(e.touches[0].clientX) + " " + String(e.touches[0].clientY));
 }
