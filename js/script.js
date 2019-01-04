@@ -30,16 +30,14 @@ function print(text) {
     context.fillText(text, 0, 0);
 }
 
-function handleStart(event) {
-    event.preventDefault();
-    context.fillStyle = "#FF0000";
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    print(event.touches[0].clientX, event.touches[0].clientY);
+function handleStart(e) {
+    e.preDefault();
+    // context.fillStyle = "#FF0000";
+    // context.fillRect(0, 0, canvas.width, canvas.height);
+    print(e.touches[0].clientX, e.touches[0].clientY);
 }
 
-function handleEnd(event) {
-    event.preventDefault();
-    context.fillStyle = "#000000";
-    context.fillRect(0, 0, canvas.width, canvas.height);
+function handleEnd(e) {
+    e.preDefault();
 }
 
