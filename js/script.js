@@ -20,12 +20,26 @@ canvas.style.margin = String(Math.floor((window.innerHeight - canvas.height) / 2
 // start
 
 // temporary
-let mpos = {x:0, y:0};
 let pos = 20;
+function print(text) {
+    context.font = "16px Arial";
+    context.fillStyle = "#FFFFFF";
+    context.fillText(text, 0, pos);
+    pos += 16;
+}
+let mpos = {x:0, y:0};
+
+
+// main
+let touchPos = {x: 0, y: 0};
+
 canvas.addEventListener("click", getMousePos)
 function getMousePos(e) {
+    console.log("pumasok");
     mpos.x = e.clientX;
     mpos.y = e.clientY;
+    context.fillStyle = "#FFFFFF";
+    print(mpos.x + " | " + mpos.y);
 }
 
 canvas.addEventListener("touchstart", handleStart, false);
@@ -33,15 +47,11 @@ canvas.addEventListener("touchend", handleEnd, false);
 // canvas.addEventListener("touchcancel", handleCancel, false);
 canvas.addEventListener("touchmove", handleMove, false);
 
-function print(text) {
-    context.font = "16px Arial";
-    context.fillStyle = "#FFFFFF";
-    contextfillText(text, 0, pos);
-    pos += 16;
-}
 
 function handleStart(e) {
     e.preventDefault();
+    touchPos.x = e.clientX;
+    touchPos.y = e.clientY;
 }
 
 function handleEnd(e) {
@@ -53,5 +63,5 @@ function handleMove(e) {
     print(String(e.touches[0].clientX) + " " + String(e.touches[0].clientY));
 }
 
-canvas.fillStyle = "#FFFFFF";
-canvas.fillRect(0, 0, 50, 50);
+context.fillStyle = "#FFFFFF";
+context.fillRect(0, 0, 50, 50);
