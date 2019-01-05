@@ -325,6 +325,8 @@ function handleStart(e) {
         direction = "right";
     }
     player.move();
+    context.fillStyle = "#FF0000";
+    context.fillRect = (0, 0, 50, 50);
 }
 
 function handleEnd(e) {
