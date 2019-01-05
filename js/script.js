@@ -366,7 +366,3 @@ function gameLoop() {
     world.show(context);
     player.show(context, "#00AA00");
 }
-
-functon test() {
-    // code here
-}
