@@ -316,11 +316,13 @@ function handleStart(e) {
     player.move();
     context.fillStyle = "#FF0000";
     context.fillRect = (0, 0, 50, 50);
+    document.body.style.background-color = "red";
 }
 
 function handleEnd(e) {
     e.preventDefault();
     player.stop();
+    document.body.style.background-color = "black";
 }
 
 function handleMove(e) {
@@ -359,7 +361,6 @@ function gameLoop() {
     };
 
     // draw
-    //
     world.showBg(context);
     world.show(context);
     player.show(context, "#00AA00");
