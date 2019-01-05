@@ -73,6 +73,7 @@ class Character {
     stop() {this.move = false;}
 
     moveUp() {
+        console.log("shit");
         this.pos.y -= this.vel;
     }
 
@@ -89,6 +90,9 @@ class Character {
     }
 
     show(context, color) {
+        this.rect.x = this.pos.x;
+        this.rect.y = this.pos.y;
+
         context.fillStyle = color;
         context.fillRect(this.x, this.y, this.w, this.h);
     }
@@ -108,19 +112,20 @@ class World {
 
     update(player, direction) {
         if (player.move) {
-            // if (direction == "up") {
-            //     player.moveUp();
-            // } else if (direction == "down") {
-            //     player.moveDown();
-            // } else if (direction == "left") {
-            //     player.moveLeft();
-            // } else if (direction == "right") {
-            //     player.moveRight();
-            // }
             if (direction == "up") {
-                this.bgRect.y += player.vel;
+                if (this.bgRect.y >= 0) {
+                    player.moveUp();
+                } else if (this.bgRect.y < 0 && player.y >= center.y - this.rect.height/2) {
+                    player.y = center.y - this.rect.h/2;
+                    this.bgRect.y += player.vel;
+                }
             } else if (direction == "down") {
-                this.bgRect.y -= player.vel;
+                if (this.bgRect.y <= -this.bg.height + canvas.height) {
+                    player.moveDown();
+                } else if (this.bgRect.y > -this.bg.height + canvas.height && player.y <= center.y - this.rect.h/2) {
+                    player.y = center.y - this.rect.h/2;
+                    this.bgRect.y -= player.vel;
+                }
             } else if (direction == "left") {
                 this.bgRect.x += player.vel;
             } else if (direction == "right") {
@@ -229,8 +234,21 @@ function getAngle(canvasCenter, vector) {
 let canvas = document.getElementById("mainCanvas");
 let context = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let gameMap = new Image();
+gameMap.style.display = "none";
+gameMap.src = "js/assets/map.png";
+
+if (screen.width > gameMap.width || screen.height > gameMap.height) {
+    if (screen.width > gameMap.width) {
+        canvas.width = gameMap.width;
+    }
+    if (screen.height > gameMap.height) {
+        canvas.height = gameMap.height;
+    }
+} else {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
 
 // let base = 0;
 //
@@ -243,8 +261,9 @@ canvas.height = window.innerHeight;
 //     canvas.width = base;
 //     canvas.height = base;
 // }
-//
-// canvas.style.margin = String(Math.floor((window.innerHeight - canvas.height) / 2)) + "px 0 0 0";
+
+
+canvas.style.margin = String(Math.floor((window.innerHeight - canvas.height) / 2)) + "px 0 0 0";
 
 let center = new Vector(canvas.width/2, canvas.height/2);
 
@@ -282,12 +301,10 @@ let direction = null
 
 // map
 let world = null;
-
-let gameMap = new Image();
-gameMap.src = "js/assets/map.png";
-gameMap.onload = gameSetup();
-
 let cell = 20;
+
+gameMap.onload = gameSetup(cell);
+
 
 let player = new Character(canvas.width/2 - cell/2, canvas.height/2 - cell/2, cell, cell);
 
@@ -325,12 +342,12 @@ function handleMove(e) {
 
 
 
-function gameSetup() {
+function gameSetup(cell) {
     const WORLD = {
-        "#BBBBBB" : [new Rect(0, canvas.height, canvas.width, 50),
-                     new Rect(0, -50, canvas.width, 50),
-                     new Rect(-50, 0, 50, canvas.height),
-                     new Rect(canvas.width, 0, 50, canvas.height)]
+        "#BBBBBB" : [new Rect(0, canvas.height, canvas.width, cell),
+                     new Rect(0, -cell, canvas.width, cell),
+                     new Rect(-cell, 0, cell, canvas.height),
+                     new Rect(canvas.width, 0, cell, canvas.height)]
     };
 
     world = new World(canvas, WORLD, gameMap);
