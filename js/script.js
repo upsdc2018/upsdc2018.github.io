@@ -34,16 +34,15 @@ canvas.addEventListener("touchend", handleEnd, false);
 // canvas.addEventListener("touchmove", handleMove, false);
 
 function print(text) {
-    context.font = "10px Arial";
+    context.font = "16px Arial";
     context.fillStyle = "#FFFFFF";
-    context.fillText(text, 0, 20);
+    context.fillText(text, 0, 30);
 }
 
 function handleStart(e) {
     e.preventDefault();
-    // context.fillStyle = "#FF0000";
-    // context.fillRect(0, 0, canvas.width, canvas.height);
-    print(String(e.touches[0].clientX) + " " + String(e.touches[0].clientY));
+    context.fillStyle = "#FF0000";
+    context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function handleEnd(e) {
