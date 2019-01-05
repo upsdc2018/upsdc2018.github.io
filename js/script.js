@@ -21,11 +21,12 @@ canvas.style.margin = String(Math.floor((window.innerHeight - canvas.height) / 2
 
 // temporary
 let mpos = {x:0, y:0};
+let pos = 0;
 canvas.addEventListener("click", getMousePos)
 function getMousePos(e) {
     mpos.x = e.clientX;
     mpos.y = e.clientY;
-    console.log(mpos);
+    pos += 1;
 }
 
 canvas.addEventListener("touchstart", handleStart, false);
@@ -41,8 +42,6 @@ function print(text) {
 
 function handleStart(e) {
     e.preventDefault();
-    context.fillStyle = "#FF0000";
-    context.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function handleEnd(e) {
