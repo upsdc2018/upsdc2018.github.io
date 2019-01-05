@@ -32,7 +32,7 @@ function getMousePos(e) {
 canvas.addEventListener("touchstart", handleStart, false);
 canvas.addEventListener("touchend", handleEnd, false);
 // canvas.addEventListener("touchcancel", handleCancel, false);
-// canvas.addEventListener("touchmove", handleMove, false);
+canvas.addEventListener("touchmove", handleMove, false);
 
 function print(text) {
     context.font = "16px Arial";
