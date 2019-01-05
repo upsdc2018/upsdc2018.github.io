@@ -223,9 +223,11 @@ function getAngle(canvasCenter, vector) {
 let canvas = document.getElementById("mainCanvas");
 let context = canvas.getContext("2d");
 
+let body = document.getElementById("mainBody");
+
 let gameMap = new Image();
 gameMap.style.display = "none";
-gameMap.src = "js/assets/map.png";
+gameMap.src = "js/assets/map3.png";
 
 if (window.innerWidth > gameMap.width || window.innerHeight > gameMap.height) {
     if (window.innerWidth > gameMap.width) {
@@ -316,13 +318,11 @@ function handleStart(e) {
     player.move();
     context.fillStyle = "#FF0000";
     context.fillRect = (0, 0, 50, 50);
-    document.body.style.background-color = "red";
 }
 
 function handleEnd(e) {
     e.preventDefault();
     player.stop();
-    document.body.style.background-color = "black";
 }
 
 function handleMove(e) {
