@@ -372,5 +372,5 @@ function gameLoop() {
     // draw
     world.showBg(context);
     world.show(context);
-    player.show(context, "#FFAAFF");
+    player.show(context, "#00AA00");
 }
