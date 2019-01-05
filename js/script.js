@@ -52,3 +52,6 @@ function handleMove(e) {
     e.preventDefault();
     print(String(e.touches[0].clientX) + " " + String(e.touches[0].clientY));
 }
+
+canvas.fillStyle = "#FFFFFF";
+canvas.fillRect(0, 0, 50, 50);
