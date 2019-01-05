@@ -73,7 +73,6 @@ class Character {
     stop() {this.move = false;}
 
     moveUp() {
-        console.log("shit");
         this.pos.y -= this.vel;
     }
 
@@ -113,19 +112,9 @@ class World {
     update(player, direction) {
         if (player.move) {
             if (direction == "up") {
-                if (this.bgRect.y >= 0) {
-                    player.moveUp();
-                } else if (this.bgRect.y < 0 && player.y >= center.y - this.rect.height/2) {
-                    player.y = center.y - this.rect.h/2;
-                    this.bgRect.y += player.vel;
-                }
+                this.bgRect.y += player.vel;
             } else if (direction == "down") {
-                if (this.bgRect.y <= -this.bg.height + canvas.height) {
-                    player.moveDown();
-                } else if (this.bgRect.y > -this.bg.height + canvas.height && player.y <= center.y - this.rect.h/2) {
-                    player.y = center.y - this.rect.h/2;
-                    this.bgRect.y -= player.vel;
-                }
+                this.bgRect.y -= player.vel;
             } else if (direction == "left") {
                 this.bgRect.x += player.vel;
             } else if (direction == "right") {
@@ -238,11 +227,11 @@ let gameMap = new Image();
 gameMap.style.display = "none";
 gameMap.src = "js/assets/map.png";
 
-if (screen.width > gameMap.width || screen.height > gameMap.height) {
-    if (screen.width > gameMap.width) {
+if (window.innerWidth > gameMap.width || window.innerHeight > gameMap.height) {
+    if (window.innerWidth > gameMap.width) {
         canvas.width = gameMap.width;
     }
-    if (screen.height > gameMap.height) {
+    if (window.innerHeight > gameMap.height) {
         canvas.height = gameMap.height;
     }
 } else {
@@ -370,6 +359,7 @@ function gameLoop() {
     };
 
     // draw
+    //
     world.showBg(context);
     world.show(context);
     player.show(context, "#00AA00");
