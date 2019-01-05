@@ -1,6 +1,7 @@
 "use strict"
 
 
+
 // start
 class Rect {
     constructor(x, y, width, height) {
@@ -227,7 +228,7 @@ let body = document.getElementById("mainBody");
 
 let gameMap = new Image();
 gameMap.style.display = "none";
-gameMap.src = "js/assets/map3.png";
+gameMap.src = "js/assets/map2.png";
 
 if (window.innerWidth > gameMap.width || window.innerHeight > gameMap.height) {
     if (window.innerWidth > gameMap.width) {
@@ -364,4 +365,8 @@ function gameLoop() {
     world.showBg(context);
     world.show(context);
     player.show(context, "#00AA00");
+}
+
+functon test() {
+    // code here
 }
