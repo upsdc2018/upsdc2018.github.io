@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html style="padding: 0; margin: 0;">
+<html lang="en">
     <head>
-        <title>Sigsheet</title>
+
+        <!-- required meta -->
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- font imports -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Arimo|Oleo+Script" rel="stylesheet"> 
+        
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+        <!-- bootstrap includes -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <title>My Sigsheet</title>
     </head>
-    <body id="mainBody" style="background-color: black; padding: 0; margin: 0;">
-        <center><canvas style="background-color: black;" id="mainCanvas" width="900" height="900"></canvas></center>
+    <body>
+        <header class="container-fluid">
+            <nav id="vnav" class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                        <a class="navbar-brand" href="#" id="vlogolink"><img id="vlogo" src="img/logo.png" alt="vaapps logo"></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active vtab"><a class="vlink" href="#"><i class="fas fa-home">&nbsp</i>Home</a></li>
+                            <li><a class="vlink" href="profile.html"><i class="fas fa-paperclip">&nbsp</i>Profile</a></li>
+                            <li><a class="vlink" href="club.html"><i class="fas fa-praying-hands">&nbsp</i>The Club</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle vlink" data-toggle="dropdown" href="#"><i class="fas fa-pen-nib">&nbsp</i>Signatures<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="pioneers.html">10 Pioneers</a></li>
+                                <li><a href="officers.html">Officers</a></li>
+                                <li><a href="members.html">Members</a></li>
+                                <li><a href="crew.html">The Crew</a></li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div>
+                <h1 class="oleo">Find out more</h1>
+                <h1 class="anton">ABOUT THIS FAMILY</h1>
+                <a class="ownButton" href="club.html">About the club...</a>
+            </div>
+        </header>
+
+
         <script src="js/script.js"></script>
     </body>
 </html>

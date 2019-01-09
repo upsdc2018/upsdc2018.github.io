@@ -1,0 +1,156 @@
+/* palette
+ * yellow: #F6C800
+ * grey: #252525
+ * white: #EAEAEA
+ * */
+
+/* fonts */
+/* font-family: 'Oleo Script', cursive; */
+/* font-family: 'Anton', sans-serif; */
+/* font-family: 'Arimo', sans-serif; */
+
+
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #252525;
+}
+
+.oleo {
+    font-family: 'Oleo Script', cursive !important;
+}
+
+.anton {
+    font-family: 'Anton', sans-serif !important;
+}
+
+img#vlogo {
+    margin-left: 10px;
+    height: 30px;
+    width: auto;
+}
+
+header.container-fluid {
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/header.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-size: 100%;
+    background-position: center;
+    height: 400px;
+    text-align: center;
+}
+
+header h1.oleo {
+    font-size: 50px;
+    color: #F6C800;
+    margin: 0;
+}
+
+header h1.anton {
+    color: #EAEAEA;
+    margin: 0;
+}
+
+nav .container-fluid {
+    padding: 10px 0 10px 0;
+    /* background-color: #F6C800; */
+    background: none;
+}
+
+div#myNavbar.navbar-collapse.collapse.in {
+    /* background-color: #F6C800; */
+    background: none;
+}
+
+nav#vnav {
+    background: none;
+    border-style: none !important;
+    padding: 20px 0 20px 0;
+}
+
+nav#vnav.navbar.navbar-inverse {
+    padding: 0;
+}
+
+nav ul li.active {
+    background: none;
+    background-color: none !important;
+    color: #F6C800 !important;
+}
+
+nav #vlogolink {
+    margin: 10px 0 0 20px;
+    padding: 0;
+    height: auto;
+}
+
+ul.dropdown-menu {
+    padding: 0 0 0 25px;
+}
+
+nav ul li a.vlink {
+    color: #EAEAEA !important;
+    margin: 5px 20px 5px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: none;
+    background-image: none;
+    background-color: none !important;
+    /* border-radius: 100px !important; */
+    /* -webkit-border-radius: 100px; */
+    /* -moz-border-radius: 100px; */
+}
+
+nav ul li a.vlink:hover {
+    color: #F6C800 !important;
+    /* background-color: #F6C800 !important; */
+}
+
+a.vlink {
+    background-color: pink;
+}
+
+a.ownButton {
+    border-radius: 100px;
+    background-color: #F6C800;
+    text-decoration: none;
+    color: #252525;
+    font-family: 'Arimo', sans-serif !important;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 15px 25px 15px 25px;
+    opacity: 0.8;
+}
+
+a.ownButton:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 979px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    header.container-fluid {
+        background-position: center top;
+    }
+}
+
+@media only screen and (max-width : 320px) {
+
+}
