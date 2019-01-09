@@ -71,7 +71,7 @@ header a.ownButton {
     margin-top: 20px;
 }
 
-div.container-fluid {
+#header-div.container-fluid {
     margin: 0;
     padding: 0;
 }
@@ -193,6 +193,33 @@ a.ownButton:hover {
     background-color: #252525;
     color: #EAEAEA;
 }
+
+
+/* CONTENT PROPER */
+
+/* GENERAL */
+.col {
+    color: #252525;
+    padding: 10px 20px;
+}
+
+h2.anton {
+    font-size: 40px !important;
+    display: inline-block;
+}
+
+.body-text {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.strong-text {
+    font-weight: bold;
+}
+
+/* HOME */
+
 
 @media only screen and (max-width : 1200px) {
 
