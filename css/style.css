@@ -20,6 +20,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #EAEAEA;
+    font-size: 16px;
 }
 
 .oleo {
@@ -97,7 +98,7 @@ div#myNavbar.navbar-collapse.collapse.in {
 
 nav#vnav {
     font-family: 'Fira Sans', sans-serif;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
@@ -176,23 +177,6 @@ nav ul li a.active {
     color: #F6C800 !important;
 }
 
-a.ownButton {
-    margin-top: 10px;
-    display: inline-block;
-    border-radius: 100px;
-    background-color: #F6C800;
-    text-decoration: none;
-    color: #252525;
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 20px;
-    /* font-weight: bold; */
-    padding: 10px 20px 10px 20px;
-}
-
-a.ownButton:hover {
-    background-color: #252525;
-    color: #EAEAEA;
-}
 
 
 /* CONTENT PROPER */
@@ -214,8 +198,38 @@ h2.anton {
     text-align: justify;
 }
 
+.block-text {
+    margin: 15px;
+    padding-left: 15px;
+    border-left: 10px solid #252525;
+}
+
 .strong-text {
     font-weight: bold;
+}
+
+.text-link {
+    text-decoration: underline;
+    color: #252525;
+    font-style: italic;
+}
+
+a.ownButton {
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 100px;
+    background-color: #F6C800;
+    text-decoration: none;
+    color: #252525;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    /* font-weight: bold; */
+    padding: 10px 20px 10px 20px;
+}
+
+a.ownButton:hover {
+    background-color: #252525;
+    color: #EAEAEA;
 }
 
 /* HOME */
