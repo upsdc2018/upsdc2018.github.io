@@ -203,6 +203,9 @@ a.ownButton:hover {
 }
 
 @media only screen and (max-width : 767px) {
+    a.ownButton {
+        font-size: 16px;
+    }
     button {
         margin-right: 25px !important;
     }
@@ -216,8 +219,15 @@ a.ownButton:hover {
         background-color: #F6C800 !important;
     }
     header.container-fluid {
+        height: 500px;
         background-position: center top;
         background-size: auto 100%;
+    }
+    header h1.oleo {
+        font-size: 60px;
+    }
+    header h1.anton {
+        font-size: 40px;
     }
     img#vlogo {
         height: 30px;
@@ -225,6 +235,12 @@ a.ownButton:hover {
     }
     nav #vlogolink {
         padding-top: 12px;
+    }
+    nav ul li a.vlink {
+        padding: 10px !important;
+        height: auto !important;
+        width: 100%;
+        font-size: 16px;
     }
 }
 
