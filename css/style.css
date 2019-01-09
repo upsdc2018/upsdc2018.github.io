@@ -4,11 +4,11 @@
  * white: #EAEAEA
  * */
 
+
 /* fonts */
 /* font-family: 'Oleo Script', cursive; */
 /* font-family: 'Anton', sans-serif; */
-/* font-family: 'Arimo', sans-serif; */
-
+/* font-family: 'Fira Sans', sans-serif; */
 
 
 html {
@@ -19,7 +19,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #252525;
+    background-color: #EAEAEA;
 }
 
 .oleo {
@@ -31,37 +31,63 @@ body {
 }
 
 img#vlogo {
-    margin-left: 10px;
-    height: 30px;
+    height: 50px;
     width: auto;
 }
 
 header.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     background-image: url("../img/header.jpg") !important;
     background-repeat: no-repeat !important;
-    background-size: 100%;
+    background-size: 100% auto;
     background-position: center;
-    height: 400px;
+    height: 600px;
     text-align: center;
 }
 
+header span#header-offset {
+    height: 80px;
+    width: 1px;
+    display: block;
+}
+
 header h1.oleo {
-    font-size: 50px;
+    font-size: 90px;
     color: #F6C800;
     margin: 0;
 }
 
 header h1.anton {
+    font-size: 70px;
     color: #EAEAEA;
     margin: 0;
 }
 
-nav .container-fluid {
-    padding: 10px 0 10px 0;
+header a.ownButton {
+    margin-top: 20px;
+}
+
+div.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+nav.container-fluid {
+    border-radius: none !important;
+    -moz-border-radius: none !important;
+    -webkit-border-radius: none !important;
+    padding: 0;
     /* background-color: #F6C800; */
     background: none;
+}
+
+div#myNavbar {
+    background: none;
+    border-color: #252525;
 }
 
 div#myNavbar.navbar-collapse.collapse.in {
@@ -70,67 +96,102 @@ div#myNavbar.navbar-collapse.collapse.in {
 }
 
 nav#vnav {
+    font-family: 'Fira Sans', sans-serif;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     background: none;
-    border-style: none !important;
+    background-color: #F6C800;
     padding: 20px 0 20px 0;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom: solid #252525 1px;
 }
 
 nav#vnav.navbar.navbar-inverse {
+    /* background-color: #F6C800; */
+    background-color: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li.active {
-    background: none;
-    background-color: none !important;
+    background-color: red !important;
     color: #F6C800 !important;
 }
 
 nav #vlogolink {
-    margin: 10px 0 0 20px;
-    padding: 0;
-    height: auto;
+    margin: 0;
+    padding: 17px 0 0 20px;
 }
 
 ul.dropdown-menu {
-    padding: 0 0 0 25px;
+    padding: 0;
+    margin: 0;
+    background-color: #F6C800;
+    color: #252525;
+}
+
+ul.dropdown-menu > li > a.drop-item {
+    text-align: center;
+    padding: 10px;
+}
+
+ul.dropdown-menu > li > a.drop-item:hover {
+    color: #F6C800;
+    background: none;
+    background-color: #252525 !important;
 }
 
 nav ul li a.vlink {
-    color: #EAEAEA !important;
-    margin: 5px 20px 5px 20px;
+    padding-top: 30px !important;
+    text-align: center;
+    display: inline-block;
+    height: 80px !important;
+    color: #252525 !important;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: none;
-    background-image: none;
-    background-color: none !important;
+    background-color: none;
     /* border-radius: 100px !important; */
     /* -webkit-border-radius: 100px; */
     /* -moz-border-radius: 100px; */
 }
 
-nav ul li a.vlink:hover {
+a.dropdown-toggle:hover {
+    background-image: none;
     color: #F6C800 !important;
-    /* background-color: #F6C800 !important; */
+    background-color: #252525 !important;
 }
 
-a.vlink {
-    background-color: pink;
+
+nav ul li a.vlink:hover {
+    background-color: #252525 !important;
+    color: #F6C800 !important;
+}
+
+nav ul li a.active {
+    background-color: #252525;
+    color: #F6C800 !important;
 }
 
 a.ownButton {
+    margin-top: 10px;
+    display: inline-block;
     border-radius: 100px;
     background-color: #F6C800;
     text-decoration: none;
     color: #252525;
-    font-family: 'Arimo', sans-serif !important;
-    font-size: 24px;
-    font-weight: 300;
-    padding: 15px 25px 15px 25px;
-    opacity: 0.8;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    /* font-weight: bold; */
+    padding: 10px 20px 10px 20px;
 }
 
 a.ownButton:hover {
-    opacity: 1;
+    background-color: #252525;
+    color: #EAEAEA;
 }
 
 @media only screen and (max-width : 1200px) {
@@ -142,13 +203,32 @@ a.ownButton:hover {
 }
 
 @media only screen and (max-width : 767px) {
-
+    button {
+        margin-right: 25px !important;
+    }
+    button > span {
+        background-color: #252525 !important;
+    }
+    button.navbar-toggle:hover {
+        background-color: #252525;
+    }
+    button:hover > span {
+        background-color: #F6C800 !important;
+    }
+    header.container-fluid {
+        background-position: center top;
+        background-size: auto 100%;
+    }
+    img#vlogo {
+        height: 30px;
+        margin-left: 10px;
+    }
+    nav #vlogolink {
+        padding-top: 12px;
+    }
 }
 
 @media only screen and (max-width : 480px) {
-    header.container-fluid {
-        background-position: center top;
-    }
 }
 
 @media only screen and (max-width : 320px) {
